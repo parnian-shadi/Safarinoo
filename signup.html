@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ثبت نام | سفرینو</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Vazirmatn", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #fff;
+    }
+
+    .page {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: row-reverse;
+    }
+
+    .left-section {
+      width: 50%;
+      background: #264426;
+      color: white;
+      position: relative;
+      padding: 25px 35px;
+      overflow: hidden;
+    }
+
+    .logo {
+      width: 110px;
+    }
+
+    .left-text {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 30px;
+      line-height: 1.7;
+      font-weight: 800;
+    }
+
+    .illustration {
+      width: 520px;
+      max-width: 85%;
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .right-section {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .form-box {
+      width: 520px;
+      max-width: 100%;
+      text-align: right;
+    }
+
+    .form-box h1 {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 35px;
+      color: #222;
+      font-weight: 800;
+    }
+
+    .google-btn {
+      width: 100%;
+      height: 48px;
+      border: 1px solid #ddd;
+      border-radius: 9px;
+      background: white;
+      font-size: 17px;
+      color: #555;
+      cursor: pointer;
+      margin-bottom: 28px;
+    }
+
+    .divider {
+      height: 1px;
+      background: #eee;
+      margin-bottom: 25px;
+    }
+
+    .row {
+      display: flex;
+      gap: 18px;
+    }
+
+    .input-group {
+      width: 100%;
+      margin-bottom: 18px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    .input-group input {
+      width: 100%;
+      height: 48px;
+      border: none;
+      outline: none;
+      background: #eeeeee;
+      border-radius: 10px;
+      padding: 0 15px;
+      font-size: 17px;
+    }
+
+    .password-line {
+      width: 100%;
+      height: 5px;
+      background: #eeeeee;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 5px;
+    }
+
+    .password-line span {
+      display: block;
+      width: 23%;
+      height: 100%;
+      background: #ff7676;
+    }
+
+    .strength-text {
+      font-size: 14px;
+      text-align: center;
+      margin: 9px 0 25px;
+      font-weight: 700;
+      min-height: 22px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      height: 55px;
+      border: none;
+      border-radius: 10px;
+      background: #36b5e8;
+      color: white;
+      font-size: 22px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .login-text {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .login-text a {
+      color: #258bd8;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        flex-direction: column;
+      }
+
+      .left-section,
+      .right-section {
+        width: 100%;
+      }
+
+      .left-section {
+        min-height: 380px;
+      }
+
+      .left-text {
+        margin-top: 50px;
+        font-size: 24px;
+      }
+
+      .illustration {
+        width: 330px;
+        bottom: 20px;
+      }
+
+      .row {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <section class="left-section">
+      <img src="images/logo.png" alt="Safarino Logo" class="logo">
+
+      <h2 class="left-text">
+       ؛ هر سفر یک داستان تازه است<br>
+        با سفرینو شروعش کن!
+      </h2>
+
+      <img src="images/signup.png" alt="Travel Illustration" class="illustration">
+    </section>
+
+    <section class="right-section">
+      <div class="form-box">
+
+        <h1>ایجاد حساب کاربری</h1>
+
+        <button class="google-btn">
+          🌐 Sign up with Google
+        </button>
+
+        <div class="divider"></div>
+
+        <form>
+          <div class="row">
+            <div class="input-group">
+              <label>نام </label>
+              <input type="text">
+            </div>
+
+            <div class="input-group">
+              <label> نام خانوادگی</label>
+              <input type="text">
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>ایمیل</label>
+            <input type="email">
+          </div>
+
+          <div class="input-group">
+            <label>رمز عبور</label>
+            <input type="password" id="passwordInput">
+          </div>
+
+          <div class="password-line">
+            <span id="passwordStrengthBar"></span>
+          </div>
+
+          <div id="passwordStrengthText" class="strength-text"></div>
+
+          <button type="button" class="submit-btn" onclick="window.location.href='profile.html'">
+            ثبت نام
+          </button>
+
+          <p class="login-text">
+            حساب کاربری دارید؟
+            <a href="login.html">ورود</a>
+          </p>
+          <form id="signupForm"> 
+
+
+
+      </div>
+    </section>
+
+  </div>
+  <script>
+    const signupForm = document.getElementById("signupForm");
+  
+    signupForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      window.location.href = "profile.html";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ورود | سفرینو</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Vazirmatn", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #e5e5e5;
+    }
+
+    .page {
+      width: 95%;
+      min-height: 96vh;
+      margin: 6px auto;
+      display: flex;
+      background: white;
+      direction: ltr;
+    }
+
+    .left-section {
+      width: 40%;
+      background: #08bd8d;
+      position: relative;
+      padding: 20px 30px;
+      overflow: hidden;
+    }
+
+    .logo {
+      width: 95px;
+      display: block;
+    }
+
+    .left-text {
+      text-align: center;
+      margin-top: 95px;
+      font-size: 24px;
+      line-height: 1.7;
+      font-weight: 800;
+      color: #222;
+      direction: rtl;
+    }
+
+    .illustration {
+      width: 430px;
+      max-width: 88%;
+      position: absolute;
+      bottom: 85px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .right-section {
+      width: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      direction: rtl;
+    }
+
+    .form-box {
+      width: 390px;
+      max-width: 100%;
+      text-align: right;
+    }
+
+    .form-box h1 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 28px;
+      color: #222;
+      font-weight: 800;
+    }
+
+    .google-btn {
+      width: 100%;
+      height: 42px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: white;
+      font-size: 15px;
+      color: #555;
+      cursor: pointer;
+      margin-bottom: 22px;
+    }
+
+    .google-icon {
+      color: #4285f4;
+      font-size: 22px;
+      font-weight: 800;
+      margin-left: 25px;
+    }
+
+    .divider {
+      height: 1px;
+      background: #eee;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 35px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    .input-group input {
+      width: 100%;
+      height: 42px;
+      border: none;
+      outline: none;
+      background: #eeeeee;
+      border-radius: 8px;
+      padding: 0 14px;
+      font-size: 16px;
+    }
+
+    .password-links {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+      font-size: 12px;
+    }
+
+    .password-links a {
+      color: #4f8f3a;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .login-btn {
+      width: 100%;
+      height: 48px;
+      border: none;
+      border-radius: 8px;
+      background: #36b5e8;
+      color: white;
+      font-size: 19px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+
+    .signup-text {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 13px;
+      color: #333;
+    }
+
+    .signup-text a {
+      color: #258bd8;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        flex-direction: column;
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      .left-section,
+      .right-section {
+        width: 100%;
+      }
+
+      .left-section {
+        min-height: 430px;
+      }
+
+      .left-text {
+        margin-top: 40px;
+        font-size: 22px;
+      }
+
+      .illustration {
+        width: 320px;
+        bottom: 30px;
+      }
+    }
+    .forgot-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.13);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.forgot-modal.active {
+  display: flex;
+}
+
+.forgot-box {
+  width: 680px;
+  max-width: 90%;
+  background: white;
+  border-radius: 14px;
+  padding: 55px 75px 70px;
+  position: relative;
+  text-align: center;
+}
+
+.close-modal {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  border: none;
+  background: transparent;
+  color: #b8dfff;
+  font-size: 34px;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.forgot-box h2 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.forgot-box p {
+  color: #777;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 55px;
+  direction: ltr;
+}
+
+.forgot-input-group {
+  text-align: right;
+  margin-bottom: 28px;
+}
+
+.forgot-input-group label {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.forgot-input-group input {
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: none;
+  background: #eeeeee;
+  border-radius: 9px;
+  padding: 0 15px;
+  font-size: 16px;
+}
+
+.reset-btn {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 9px;
+  background: #5aa9ff;
+  color: white;
+  font-size: 19px;
+  font-weight: 800;
+  cursor: pointer;
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <section class="left-section">
+      <img src="images/logo.png" alt="Safarino Logo" class="logo">
+
+      <h2 class="left-text">
+        هر سفر یک داستان تازه است!<br>
+        با سفرینو شروعش کن!
+      </h2>
+
+      <img src="images/signup.png" alt="Travel Illustration" class="illustration">
+    </section>
+
+    <section class="right-section">
+      <div class="form-box">
+
+        <h1>ورود به حساب کاربری</h1>
+
+        <button class="google-btn">
+          <span class="google-icon">G</span>
+          Sign in with Google
+        </button>
+
+        <div class="divider"></div>
+
+        <form action="index.html">
+
+          <div class="input-group">
+            <label>شماره موبایل</label>
+            <input type="tel">
+          </div>
+
+          <div class="input-group">
+            <label>رمز عبور</label>
+            <input type="password">
+
+            <div class="password-links">
+              <a href="#" id="forgotPasswordLink">فراموشی رمز عبور</a>
+              <a href="#">ورود با رمز یکبار مصرف</a>
+            </div>
+          </div>
+
+          <button type="submit" class="login-btn">ورود</button>
+
+          <p class="signup-text">
+            حساب کاربری ندارید؟
+            <a href="signup.html">ثبت نام</a>
+          </p>
+
+        </form>
+
+      </div>
+    </section>
+
+  </div>
+<div class="forgot-modal" id="forgotModal">
+  <div class="forgot-box">
+
+    <button class="close-modal" id="closeModal">×</button>
+
+    <h2>رمز خود را فراموش کرده اید؟</h2>
+
+    <p>
+      نگران نباشید! آدرس ایمیلی که برای حساب کاربری خود استفاده می‌کنید را در زیر وارد کنید تا لینک بازنشانی رمز عبور برای شما ارسال شود
+    </p>
+
+    <div class="forgot-input-group">
+      <label>ایمیل</label>
+      <input type="email">
+    </div>
+
+    <button class="reset-btn">تغییر رمز</button>
+
+  </div>
+  <script>
+  const forgotPasswordLink = document.getElementById("forgotPasswordLink");
+  const forgotModal = document.getElementById("forgotModal");
+  const closeModal = document.getElementById("closeModal");
+
+  forgotPasswordLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    forgotModal.classList.add("active");
+  });
+
+  closeModal.addEventListener("click", function () {
+    forgotModal.classList.remove("active");
+  });
+
+  forgotModal.addEventListener("click", function (event) {
+    if (event.target === forgotModal) {
+      forgotModal.classList.remove("active");
+    }
+  });
+</script>
+</div>
+
+</body>
+</html>

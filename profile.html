@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تکمیل پروفایل | سفرینو</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Vazirmatn", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #fff;
+    }
+
+    .page {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: row-reverse;
+    }
+
+    .left-section {
+      width: 50%;
+      background: #aee8f1;
+      position: relative;
+      padding: 25px 35px;
+      overflow: hidden;
+    }
+
+    .logo {
+      width: 110px;
+      display: block;
+    }
+
+    .left-text {
+      text-align: center;
+      margin-top: 70px;
+      font-size: 28px;
+      line-height: 1.7;
+      font-weight: 800;
+      color: #222;
+    }
+
+    .illustration {
+      width: 520px;
+      max-width: 85%;
+      position: absolute;
+      bottom: 85px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .right-section {
+      width: 50%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .login-link {
+      position: absolute;
+      top: 28px;
+      right: 35px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #222;
+    }
+
+    .login-link a {
+      color: #258bd8;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .form-box {
+      width: 520px;
+      max-width: 100%;
+      text-align: right;
+    }
+
+    .form-box h1 {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 55px;
+      color: #222;
+      font-weight: 800;
+    }
+
+    .input-group {
+      margin-bottom: 48px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    .input-group input {
+      width: 100%;
+      height: 48px;
+      border: none;
+      outline: none;
+      background: #eeeeee;
+      border-radius: 10px;
+      padding: 0 15px;
+      font-size: 17px;
+    }
+
+    .upload-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 25px;
+      color: #222;
+    }
+
+    .upload-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 35px;
+      margin-bottom: 42px;
+      direction: ltr;
+    }
+
+    .upload-circle {
+      width: 185px;
+      height: 185px;
+      border-radius: 50%;
+      border: 2px dashed #777;
+      background: #f1f1f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      overflow: hidden;
+      color: #777;
+      font-size: 34px;
+    }
+
+    .upload-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .upload-text {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #555;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .upload-text span {
+      font-size: 28px;
+      color: #777;
+    }
+
+    #profileImage {
+      display: none;
+    }
+
+    .start-btn {
+      width: 100%;
+      height: 55px;
+      border: none;
+      border-radius: 10px;
+      background: #36b5e8;
+      color: white;
+      font-size: 21px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        flex-direction: column;
+      }
+
+      .left-section,
+      .right-section {
+        width: 100%;
+      }
+
+      .left-section {
+        min-height: 450px;
+      }
+
+      .left-text {
+        margin-top: 50px;
+        font-size: 23px;
+      }
+
+      .illustration {
+        width: 330px;
+        bottom: 25px;
+      }
+
+      .right-section {
+        padding-top: 80px;
+      }
+
+      .login-link {
+        right: 20px;
+      }
+
+      .upload-row {
+        flex-direction: column;
+        direction: rtl;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <section class="left-section">
+      <img src="images/logo.png" alt="Safarino Logo" class="logo">
+
+      <h2 class="left-text">
+        هر سفر یک داستان تازه است!<br>
+        با سفرینو شروعش کن!
+      </h2>
+
+      <img src="images/signup.png" alt="Travel Illustration" class="illustration">
+    </section>
+
+    <section class="right-section">
+
+      <p class="login-link">
+        حساب کاربری دارید؟
+        <a href="login.html">ورود</a>
+      </p>
+
+      <div class="form-box">
+
+        <h1>خوش آمدید! درباره خودتان بیشتر به ما بگویید!</h1>
+
+        <form action="index.html">
+
+          <div class="input-group">
+            <label>شهر/کشور</label>
+            <input type="text">
+          </div>
+
+          <p class="upload-title">عکس پروفایل خود را آپلود کنید</p>
+
+          <div class="upload-row">
+
+            <label for="profileImage" class="upload-circle" id="previewBox">
+              🖼
+            </label>
+
+            <label for="profileImage" class="upload-text">
+              <span>›</span>
+              یا یک آواتار انتخاب کنید
+            </label>
+
+            <input type="file" id="profileImage" accept="image/*">
+
+          </div>
+
+          <button type="submit" class="start-btn">شروع کنید</button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    const profileImage = document.getElementById("profileImage");
+    const previewBox = document.getElementById("previewBox");
+
+    profileImage.addEventListener("change", function () {
+      const file = profileImage.files[0];
+
+      if (file) {
+        const imageUrl = URL.createObjectURL(file);
+        previewBox.innerHTML = `<img src="${imageUrl}" alt="Profile Image">`;
+      }
+    });
+  </script>
+
+</body>
+</html>

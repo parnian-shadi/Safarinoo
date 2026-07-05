@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safarino</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Vazirmatn", sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #222;
+    }
+
+    .hero {
+      min-height: 720px;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.1)),
+        url("images/hero.jpg.png");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 25px 60px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      color: #1464a5;
+      font-size: 24px;
+      direction: ltr;
+    }
+
+    .logo-icon {
+      width: 75px;
+      height: 55px;
+      background: #2d91d4;
+      border-radius: 50% 50% 45% 45%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 35px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 70px;
+      list-style: none;
+      font-weight: 700;
+      font-size: 21px;
+    }
+
+    .menu a {
+      color: #222;
+      text-decoration: none;
+    }
+
+    .auth {
+      display: flex;
+      gap: 20px;
+      direction: ltr;
+    }
+
+    .btn {
+      border: none;
+      outline: none;
+      cursor: pointer;
+      border-radius: 22px;
+      padding: 16px 48px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .btn-login {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-register {
+      background: #6aa85c;
+      color: white;
+      border: 2px solid #6aa85c;
+    }
+
+    .hero-content {
+      width: 58%;
+      margin-top: 95px;
+      margin-right: auto;
+      color: white;
+      text-align: right;
+    }
+
+    .hero-content h1 {
+      font-size: 46px;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    .hero-content p {
+      font-size: 24px;
+      line-height: 1.9;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 18px;
+      justify-content: flex-start;
+      direction: ltr;
+    }
+
+    .hero-actions button {
+      border-radius: 18px;
+      padding: 14px 38px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .primary-action {
+      background: #6aa85c;
+      border: 2px solid #6aa85c;
+      color: white;
+    }
+
+    .outline-action {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+
+    .search-box {
+      position: absolute;
+      bottom: -40px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 72%;
+      background: rgba(255, 255, 255, 0.78);
+      padding: 18px 20px;
+      border-radius: 22px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    .search-inner {
+      background: white;
+      border-radius: 12px;
+      display: grid;
+      grid-template-columns: 2fr 1.3fr 1.3fr 1.3fr 1fr;
+      align-items: center;
+      overflow: hidden;
+      min-height: 68px;
+      direction: rtl;
+    }
+
+    .search-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      color: #5b5b5b;
+      font-size: 18px;
+      font-weight: 600;
+      border-left: 1px solid #cfcfcf;
+      height: 42px;
+    }
+
+    .search-item:first-child {
+      justify-content: flex-start;
+      padding-right: 28px;
+    }
+
+    .search-item span {
+      font-size: 26px;
+      color: #666;
+    }
+
+    .search-btn {
+      margin: 0 14px;
+      height: 48px;
+      border-radius: 8px;
+      background: #69a85c;
+      color: white;
+      border: none;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .destinations {
+      padding: 95px 80px 25px;
+      background: white;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 23px;
+      font-weight: 800;
+      border-right: 3px solid #222;
+      padding-right: 14px;
+    }
+
+    .see-all {
+      color: #333;
+      font-weight: 600;
+      font-size: 17px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 38px;
+      direction: ltr;
+    }
+
+    .card {
+      height: 280px;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    .heart {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      color: white;
+      font-size: 22px;
+      z-index: 2;
+    }
+
+    .card-info {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 10px;
+      padding: 16px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(8px);
+      direction: rtl;
+    }
+
+    .card-info h3 {
+      font-size: 15px;
+      margin-bottom: 5px;
+      font-weight: 800;
+    }
+
+    .location {
+      color: #777;
+      font-size: 13px;
+      margin-bottom: 11px;
+    }
+
+    .bottom-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      direction: ltr;
+    }
+
+    .distance {
+      color: #777;
+      font-size: 13px;
+    }
+
+    .show-btn {
+      background: #5b9ee6;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1200px) {
+      .cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .hero-content {
+        width: 75%;
+      }
+
+      .search-box {
+        width: 88%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 20px;
+      }
+
+      .navbar {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .menu {
+        gap: 25px;
+        font-size: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .auth {
+        direction: rtl;
+      }
+
+      .btn {
+        padding: 12px 28px;
+        font-size: 16px;
+      }
+
+      .hero-content {
+        width: 100%;
+        margin-top: 60px;
+      }
+
+      .hero-content h1 {
+        font-size: 32px;
+      }
+
+      .hero-content p {
+        font-size: 18px;
+      }
+
+      .search-box {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-top: 45px;
+      }
+
+      .search-inner {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 15px;
+      }
+
+      .search-item {
+        border-left: none;
+        border-bottom: 1px solid #ddd;
+        justify-content: flex-start;
+        padding: 10px;
+      }
+
+      .search-btn {
+        width: 100%;
+        margin: 0;
+      }
+
+      .destinations {
+        padding: 45px 20px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <nav class="navbar">
+      <div class="auth">
+        <button class="btn btn-login">ورود</button>
+        <button class="btn btn-register">ثبت نام</button>
+      </div>
+
+      <ul class="menu">
+        <li><a href="#">خانه</a></li>
+        <li><a href="#">مقصد ها</a></li>
+        <li><a href="#">نقشه</a></li>
+        <li><a href="#">نکات سفر</a></li>
+        <li><a href="#">درباره ما</a></li>
+      </ul>
+
+      <div class="logo">
+        <div class="logo">
+        <img src="images/logo.png" alt="Safarino Logo" class="logo-img">
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <h1>سفرینو؛ همراه مطمئن سفرهای تو</h1>
+      <p>
+        تجربه سفر های واقعی، برنامه ریزی هوشمند<br>
+        و کشف مکان های شگفت انگیز
+      </p>
+
+      <div class="hero-actions">
+        <button class="primary-action">شروع سفر</button>
+        <button class="outline-action">مشاهده مقصد ها 🗺</button>
+      </div>
+    </div>
+
+    <div class="search-box">
+      <div class="search-inner">
+        <div class="search-item">
+          <span>📍</span>
+          <p>مقصد خود را جستجو کنید</p>
+        </div>
+
+        <div class="search-item">
+          <span>📅</span>
+          <p>تاریخ رفت</p>
+        </div>
+
+        <div class="search-item">
+          <span>📅</span>
+          <p>تاریخ برگشت</p>
+        </div>
+
+        <div class="search-item">
+          <span>🧭</span>
+          <p>نوع سفر</p>
+        </div>
+
+        <button class="search-btn">
+          جستجو 🔍
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="destinations">
+    <div class="section-header">
+      <h2 class="section-title">محبوب ترین مقصد ها</h2>
+      <span class="see-all">مشاهده همه ‹</span>
+    </div>
+
+    <div class="cards">
+
+      <div class="card" style="background-image: url('images/shiraz.png');">
+        <div class="heart">♥</div>
+        <div class="card-info">
+          <h3>استان فارس</h3>
+          <p class="location">📍 شیراز</p>
+          <div class="bottom-info">
+            <span class="distance">931 Km</span>
+            <button class="show-btn">نمایش</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="background-image: url('images/esfahan.png');">
+        <div class="heart">♥</div>
+        <div class="card-info">
+          <h3>استان اصفهان</h3>
+          <p class="location">📍 اصفهان</p>
+          <div class="bottom-info">
+            <span class="distance">440 Km</span>
+            <button class="show-btn">نمایش</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="background-image: url('images/gilan.png');">
+        <div class="heart">♥</div>
+        <div class="card-info">
+          <h3>استان گیلان</h3>
+          <p class="location">📍 رشت</p>
+          <div class="bottom-info">
+            <span class="distance">328 Km</span>
+            <button class="show-btn">نمایش</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="background-image: url('images/yazd.jpg.jfif');">
+        <div class="heart">♥</div>
+        <div class="card-info">
+          <h3>استان یزد</h3>
+          <p class="location">📍 یزد</p>
+          <div class="bottom-info">
+            <span class="distance">621 Km</span>
+            <button class="show-btn">نمایش</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="background-image: url('images/hamedan.png');">
+        <div class="heart">♥</div>
+        <div class="card-info">
+          <h3>استان همدان</h3>
+          <p class="location">📍 همدان</p>
+          <div class="bottom-info">
+            <span class="distance">322 Km</span>
+            <button class="show-btn">نمایش</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="background-image: url('images/tabriz.png');">
+        <div class="heart">♥</div>
+        <div class="card-info">
+          <h3>استان آذربایجان غربی</h3>
+          <p class="location">📍 تبریز</p>
+          <div class="bottom-info">
+            <span class="distance">630 Km</span>
+            <button class="show-btn">نمایش</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
